@@ -1,0 +1,129 @@
+{
+  "parameter_source": "Public template only. The nominal mass reference must be checked against the exact model revision, robot variant, payload, and measured mass. All null actuator and standing fields must be filled from an appropriate source. These values are not hardware calibration or safety limits.",
+  "delay_physics_steps": null,
+  "standing_height": null,
+  "model_mass_kg": 59.0,
+  "mass_scaling": "uniform",
+  "joints": {
+    "FL_HipX_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "FL_HipY_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "FL_Knee_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "FR_HipX_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "FR_HipY_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "FR_Knee_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "HL_HipX_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "HL_HipY_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "HL_Knee_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "HR_HipX_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "HR_HipY_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    },
+    "HR_Knee_joint": {
+      "kp": null,
+      "kd": null,
+      "effort_limit": null,
+      "velocity_limit": null,
+      "armature": null,
+      "frictionloss": null,
+      "default_q": null,
+      "action_scale": null
+    }
+  }
+}

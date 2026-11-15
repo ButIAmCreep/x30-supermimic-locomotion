@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "go2-supermimic"
+version = "0.1.0"
+description = "X30 quadruped locomotion with SuperMimic-style model-based RL in mjlab"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "mjlab>=1.6.0",
+  "torch",
+  "matplotlib",
+  "mediapy",
+  "pillow",
+  "tensorboard",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "tomli; python_version < '3.11'"]
+
+[tool.setuptools.packages.find]
+include = ["go2_supermimic*"]
+
+[tool.setuptools.package-data]
+go2_supermimic = [
+  "robot/go2.xml",
+  "robot/assets/*.obj",
+  "robot/LICENSE_menagerie_go2",
+  "robot/x30.xml",
+  "robot/x30_assets/*.STL",
+  "robot/LICENSE_deep_robotics_model.txt",
+  "robots/go2/model/go2.xml",
+  "robots/go2/model/assets/*.obj",
+  "robots/go2/model/LICENSE_menagerie_go2",
+  "robots/x30/model/x30.xml",
+  "robots/x30/model/x30_assets/*.STL",
+  "robots/x30/model/LICENSE_deep_robotics_model.txt",
+]

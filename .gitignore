@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# Local configuration and machine data
+configs/x30/robot.json
+configs/x30/*.hardware_pending.json
+configs/x30/*.private.json
+*.pcap
+*.pcapng
+data/
+logs/
+outputs/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.mp4
