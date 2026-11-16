@@ -30,17 +30,6 @@ The actor does not output motor torque. The simulation applies the configured jo
 
 ## Simulation results
 
-The 15,000-iteration X30-Trot-Flat checkpoint was evaluated on three seeds in flat-ground simulation:
-
-| Forward command | Planar velocity RMSE across seeds | Falls |
-|---:|---:|---:|
-| 0.3 m/s | 0.0379–0.0393 m/s | 0 / 3 |
-| 0.5 m/s | 0.0208–0.0211 m/s | 0 / 3 |
-
-A separate command-transition evaluation covered start, stop, restart, speed changes, and left/right turning. All 27 tested segments met the project’s initial simulation tolerances across three seeds. These results are limited to the tested nominal simulation setup; they are not real-robot results or a guarantee for other commands and conditions.
-
-See [simulation results](docs/SIMULATION_RESULTS.md) for test conditions, additional metrics, and limitations.
-
 ### 50,000-iteration omnidirectional curriculum checkpoint
 
 A separate `X30-Omnidirectional` checkpoint at iteration 50,000 was evaluated in flat-ground simulation on one seed (101009), with 22 command and transition cases of 24 seconds each. The evaluation report marked 21/22 cases as passed, reported no falls, and passed the world-model and retention checks. Forward, backward, and lateral mastered/probe groups passed; the yaw mastered group passed, while the yaw probe group did not. The ordinary left-turn and right-turn cases both passed with zero falls; the left-turn case had a velocity RMSE of 0.0315 m/s and a yaw-rate RMSE of 0.0190 rad/s.
