@@ -41,6 +41,14 @@ A separate command-transition evaluation covered start, stop, restart, speed cha
 
 See [simulation results](docs/SIMULATION_RESULTS.md) for test conditions, additional metrics, and limitations.
 
+### 50,000-iteration omnidirectional curriculum checkpoint
+
+A separate `X30-Omnidirectional` checkpoint at iteration 50,000 was evaluated in flat-ground simulation on one seed (101009), with 22 command and transition cases of 24 seconds each. The evaluation report marked 21/22 cases as passed, reported no falls, and passed the world-model and retention checks. Forward, backward, and lateral mastered/probe groups passed; the yaw mastered group passed, while the yaw probe group did not. The ordinary left-turn and right-turn cases both passed with zero falls; the left-turn case had a velocity RMSE of 0.0315 m/s and a yaw-rate RMSE of 0.0190 rad/s.
+
+The failed case was a left U-turn: the simulated turn completed, but the final heading error was 0.108 rad, above the evaluator's 0.08 rad threshold. This result is from one seed and should be read alongside the failure, not as a general success claim. The checkpoint's curriculum caps were forward 2.4 m/s, backward 0.6 m/s, lateral 1.0 m/s, and yaw 0.2 rad/s for mastered commands; probe caps were 3.0 m/s, 0.6 m/s, 1.0 m/s, and 0.4 rad/s, respectively. These are simulation evaluation settings, not X30 hardware safety limits.
+
+See [50,000-iteration evaluation details](docs/OMNIDIRECTIONAL_50000_RESULTS.md). The checkpoint and raw training/evaluation logs are not included.
+
 ## Setup
 
 The project targets Linux or WSL2 with a compatible Python, PyTorch, mjlab, MuJoCo and GPU/Warp installation.
