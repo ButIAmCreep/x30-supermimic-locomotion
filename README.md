@@ -32,9 +32,24 @@ The actor does not output motor torque. The simulation applies the configured jo
 
 ### 50,000-iteration omnidirectional curriculum checkpoint
 
-A separate `X30-Omnidirectional` checkpoint at iteration 50,000 was evaluated in flat-ground simulation on one seed (101009), with 22 command and transition cases of 24 seconds each. The evaluation report marked 21/22 cases as passed, reported no falls, and passed the world-model and retention checks. Forward, backward, and lateral mastered/probe groups passed; the yaw mastered group passed, while the yaw probe group did not. The ordinary left-turn and right-turn cases both passed with zero falls; the left-turn case had a velocity RMSE of 0.0315 m/s and a yaw-rate RMSE of 0.0190 rad/s.
+A separate `X30-Omnidirectional` checkpoint at iteration 50,000 was evaluated in flat-ground MuJoCo simulation on one seed (101009), with 22 command and transition cases of 24 seconds each.
 
-The failed case was a left U-turn: the simulated turn completed, but the final heading error was 0.108 rad, above the evaluator's 0.08 rad threshold. This result is from one seed and should be read alongside the failure, not as a general success claim. The checkpoint's curriculum caps were forward 2.4 m/s, backward 0.6 m/s, lateral 1.0 m/s, and yaw 0.2 rad/s for mastered commands; probe caps were 3.0 m/s, 0.6 m/s, 1.0 m/s, and 0.4 rad/s, respectively. These are simulation evaluation settings, not X30 hardware safety limits.
+| Evaluation item | Result |
+|---|---|
+| Cases passed | 21 / 22 |
+| Falls | 0 across all 22 cases |
+| World-model checks and retention checks | Passed |
+| Forward, backward, and lateral mastered/probe groups | Passed |
+| Yaw mastered group / yaw probe group | Passed / Not passed |
+| Ordinary left turn and right turn | Both passed; no falls |
+| Ordinary left-turn tracking error | Velocity RMSE 0.0315 m/s; yaw-rate RMSE 0.0190 rad/s |
+| Left U-turn probe | Turn completed with no fall, but did not pass: heading error 0.108 rad, above the 0.08 rad threshold |
+
+![X30 50,000-iteration policy in MuJoCo simulation](docs/images/x30_50000_mujoco.png)
+
+*MuJoCo simulation screenshot. The HUD shows one environment and an actual real-time factor of 0.21× (5 FPS); these are simulation throughput indicators, not locomotion accuracy metrics.*
+
+This is a single-seed result, so it does not establish performance across random seeds or other conditions. The checkpoint's curriculum caps were forward 2.4 m/s, backward 0.6 m/s, lateral 1.0 m/s, and yaw 0.2 rad/s for mastered commands; probe caps were 3.0 m/s, 0.6 m/s, 1.0 m/s, and 0.4 rad/s, respectively. These are simulation evaluation settings, not X30 hardware safety limits.
 
 See [50,000-iteration evaluation details](docs/OMNIDIRECTIONAL_50000_RESULTS.md). The checkpoint and raw training/evaluation logs are not included.
 
